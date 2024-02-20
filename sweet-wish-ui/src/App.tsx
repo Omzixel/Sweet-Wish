@@ -8,7 +8,6 @@ import About from './pages/About'
 import Contact from './pages/Contact'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
