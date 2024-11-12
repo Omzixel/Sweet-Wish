@@ -1,45 +1,64 @@
-
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 const About: React.FC = () => {
   return (
-    <section className="py-16 bg-[#fae3eb] flex items-center justify-center">
-    <div className="container mx-auto flex flex-col-reverse md:flex-row items-center justify-center">
-        <div className="w-full md:w-1/2 pr-0 md:pr-8 mb-8 md:mb-0">
-            <img className="rounded-lg w-full"
-                 src="https://i.ibb.co/6NDwF7d/413979415-856362963159825-8024410639689083445-n.jpg"
-                 alt="413979415-856362963159825-8024410639689083445-n"
-                 />
-        </div>
-        <div className="w-full md:w-1/2 pl-0 md:pl-8">
-            <h1 className="text-4xl font-bold mb-8">About Page</h1>
-            <div className="text-gray-700 p-8">
-                <p className="mb-4">
-                    Dobrodošli u <span className="font-bold">Slatka Želju</span> - mjesto gdje se ostvaruju vaše najslađe želje!
-                </p>
-                <p className="mb-4">
-                    Naša priča započinje s strašću prema slastičarstvu i ljubavlju prema stvaranju savršenih okusa.
-                    <span className="font-bold">Slatka Želja</span> je obiteljska tvrtka posvećena proizvodnji vrhunskih kolača
-                    i torti koje će zadovoljiti sva vaša nepca.
-                </p>
-                <p className="mb-4">
-                    Kroz pažljiv odabir najkvalitetnijih sastojaka, naši majstori slastica svakodnevno stvaraju čaroliju koja će
-                    oduševiti vaše nepce i pružiti vam nezaboravno iskustvo uživanja u slatkim delicijama.
-                    Posebnu pažnju posvećujemo detaljima i estetici, kako bismo svaki kolač ili tortu pretvorili u pravo malo umjetničko djelo.
-                </p>
-                <p className="mb-4">
-                    Bez obzira trebate li slatkiš za posebnu prigodu, slavlje ili jednostavno želite uživati u trenutku
-                    slatke radosti, <span className="font-bold">Slatka Želja</span> je tu da ispuni vaše najslađe želje.
-                </p>
-                <p>
-                    Radujemo se što ćemo vas povesti na put slatkog užitka i dijeliti s vama radost stvaranja nezaboravnih
-                    slatkih trenutaka. Hvala vam što ste dio <span className="font-bold">Slatke Želje</span>!
-                </p>
-            </div>
+    <div className="">
+      <div
+        className="bg-cover h-96 mb-5"
+        style={{
+          backgroundImage:
+            'url("https://hips.hearstapps.com/hmg-prod/images/chocolate-cake-index-64b83bce2df26.jpg?crop=0.6668359143606668xw:1xh;center,top&resize=1200:*")',
+        }}
+        aria-label="Hero section with studio name"
+      ></div>
 
+      <div className="mx-auto px-4 py-8 max-w-5xl">
+        <h1 className="text-4xl font-bold text-center mb-8">Slatka Želja</h1>
+
+        <div className="grid md:grid-cols-2 gap-8 items-center mb-12">
+          <img
+            src="https://media.houseandgarden.co.uk/photos/61893f4cb028fc86ce48802d/3:2/w_660,h_440,c_limit/apr-10_simple-vanilla-cake_b.jpg"
+            alt="Slatka Želja"
+            className="rounded-lg shadow-lg"
+          />
+
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">Naša priča</h2>
+            <p className="text-muted-foreground mb-4">
+              Dobrodošli u pekaru Slatku Želju, gdje se strast susreće sa
+              savršenstvom u svakom zalogaju. Od 2010. godine izrađujemo ukusne
+              torte i kolače koji donose radost našoj lokalnoj zajednici. Naša
+              predanost kvalitetnim sastojcima i starim receptima učinila nas je
+              omiljenim mjestom u susjedstvu
+            </p>
+          </div>
         </div>
+
+        <div className="p-6 rounded-lg mb-12 bg-slate-100">
+          <h2 className="text-2xl font-semibold mb-4">Naše vrijednosti</h2>
+          <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+            <li>Korištenje visokokvalitetnih sastojaka lokalnog porijekla</li>
+            <li>Posvećenost tradicionalnim metodama pečenja</li>
+            <li>Personalizirana usluga i posvećenost detaljima</li>
+            <li>Podrška našoj lokalnoj zajednici kroz razne inicijative</li>
+          </ul>
+        </div>
+
+        <div className="text-center">
+          <h2 className="text-2xl font-semibold mb-4">Posjetite nas danas!</h2>
+          <p className="text-muted-foreground mb-6 w-2/3 mx-auto">
+            Dođite osjetiti toplinu i miris svježe pečenih proizvoda u Slatkoj
+            Želji. Voljeli bismo biti dio vašeg slavlja i svakodnevnih
+            trenutaka.
+          </p>
+          <Button asChild>
+            <Link to="/contact">KONTAKT</Link>
+          </Button>
+        </div>
+      </div>
     </div>
-</section>
   );
 };
 
