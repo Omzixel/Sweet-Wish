@@ -20,7 +20,7 @@ const Navbar: React.FC = () => {
         <div className="flex items-center justify-center">
           <nav className="hidden md:flex space-x-4">
             <Button variant="ghost" asChild>
-              <Link to="/products">USLUGE</Link>
+              <Link to="/services">USLUGE</Link>
             </Button>
             <Button variant="ghost" asChild>
               <Link to="/gallery">GALERIJA</Link>
@@ -56,7 +56,7 @@ const Navbar: React.FC = () => {
         </div>
         <div className="md:hidden flex justify-center mt-4 space-x-4">
           <Button variant="ghost" asChild>
-            <Link to="/products">USLUGE</Link>
+            <Link to="/services">USLUGE</Link>
           </Button>
           <Button variant="ghost" asChild>
             <Link to="/gallery">GALERIJA</Link>
