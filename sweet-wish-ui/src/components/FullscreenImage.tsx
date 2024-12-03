@@ -38,9 +38,13 @@ export function FullscreenImage({
   }, [handleKeyDown]);
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50">
-      <div className="relative w-full h-full">
-        <img src={src} alt={alt} className="select-none" />
+    <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center">
+      <div className="relative flex items-center justify-center w-full h-full">
+        <img
+          src={src}
+          alt={alt}
+          className="select-none max-w-full max-h-full object-contain"
+        />
         <Button
           variant="ghost"
           size="icon"
