@@ -8,7 +8,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import logoImg from "../../public/logo.png";
 
 const Home: React.FC = () => {
   const [images, setImages] = useState<string[]>([]);
@@ -33,31 +32,32 @@ const Home: React.FC = () => {
   const [activeTab, setActiveTab] = useState<"cake" | "cookie">("cake");
 
   return (
-    <section className="py-16 bg-[#fae3eb]">
+    <section>
       <div className="container mx-auto">
-        <h1 className="text-4xl font-bold mb-8 text-center">
-          Dobrodošli u Slatku Želju
-        </h1>
+        <div className="mt-10 text-center bg-amber-50 py-10 mx-16 p-4 rounded-md shadow-md">
+          <h1 className="text-4xl font-bold mb-8 text-center">
+            Dobrodošli u Slatku Želju
+          </h1>
 
-        <p className="text-gray-700 text-center">Naši proizvodi</p>
-        <Carousel className="w-1/2 mx-auto">
-          <CarouselContent>
-            {images.map((imageUrl, index) => (
-              <CarouselItem key={index}>
-                <img
-                  src={imageUrl}
-                  alt={`Image ${index}`}
-                  className="w-full h-auto"
-                />
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
-        <div className="mt-10 text-center bg-amber-50 py-10">
+          <Carousel className="w-1/2 mx-auto">
+            <CarouselContent>
+              {images.map((imageUrl, index) => (
+                <CarouselItem key={index}>
+                  <img
+                    src={imageUrl}
+                    alt={`Image ${index}`}
+                    className="w-full h-auto"
+                  />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+        </div>
+        <div className="mt-10 text-center bg-amber-100 py-10 mx-16 p-4 rounded-md shadow-md">
           <h2 className="text-2xl font-semibold mb-4">O Slatkoj Želji</h2>
-          <p className="mb-6 text-muted-foreground mx-8">
+          <p className="mb-6 text-muted-foreground mx-4">
             U Slatkoj Želji već više od 5 godina izrađujemo ukusne torte i
             kolače. Naša strast prema pečenju i predanost kvalitetnim sastojcima
             čine svaki zalogaj trenutkom za uživanje.
@@ -66,14 +66,14 @@ const Home: React.FC = () => {
             <Link to="/about">ISTRAŽI VIŠE</Link>
           </Button>
         </div>
-        <div className="p-4 mt-10 mx-8">
-          <div className="flex space-x-4 mb-4">
+        <div className="p-4 mt-10 mx-16 bg-amber-50 rounded-md shadow-md">
+          <div className="flex justify-center space-x-4 mb-4">
             <button
               onClick={() => setActiveTab("cake")}
               className={`px-4 py-2 font-semibold rounded-md transition duration-300 w-1/2 ${
                 activeTab === "cake"
-                  ? "bg-amber-200"
-                  : "bg-gray-100 text-gray-700 opacity-65 scale-90"
+                  ? "bg-white text-gray-800 shadow-md"
+                  : "bg-gray-100 text-gray-500"
               }`}
             >
               Torte
@@ -82,8 +82,8 @@ const Home: React.FC = () => {
               onClick={() => setActiveTab("cookie")}
               className={`px-4 py-2 font-semibold rounded-md transition duration-300 w-1/2 ${
                 activeTab === "cookie"
-                  ? "bg-amber-200"
-                  : "bg-gray-100 text-gray-700 opacity-65 scale-90"
+                  ? "bg-white text-gray-800 shadow-md"
+                  : "bg-gray-100 text-gray-500"
               }`}
             >
               Kolači
@@ -91,11 +91,11 @@ const Home: React.FC = () => {
           </div>
           <div>
             {activeTab === "cake" ? (
-              <div className="bg-gray-100 p-4 rounded-md">
-                <h2 className=" font-bold text-lg mb-2">
+              <div className="p-4">
+                <h2 className="font-bold text-lg mb-2">
                   Naše najprodavanije torte
                 </h2>
-                <ul className="list-disc list-inside ">
+                <ul className="list-disc list-inside">
                   <li>Sacher torta</li>
                   <li>Dobos torta</li>
                   <li>Cheesecake</li>
@@ -104,7 +104,7 @@ const Home: React.FC = () => {
                 </ul>
               </div>
             ) : (
-              <div className="bg-gray-100 p-4 rounded-md">
+              <div className="p-4">
                 <h2 className="font-bold text-lg mb-2">
                   Naši najprodavaniji kolači
                 </h2>
