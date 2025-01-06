@@ -4,9 +4,9 @@ import { Button } from "@/components/ui/button";
 
 const About: React.FC = () => {
   return (
-    <div className="">
+    <div>
       <div
-        className="bg-cover h-96 mb-5"
+        className="bg-cover h-64 sm:h-64 lg:h-96 mb-5"
         style={{
           backgroundImage:
             'url("https://hips.hearstapps.com/hmg-prod/images/chocolate-cake-index-64b83bce2df26.jpg?crop=0.6668359143606668xw:1xh;center,top&resize=1200:*")',
@@ -15,17 +15,21 @@ const About: React.FC = () => {
       ></div>
 
       <div className="mx-auto px-4 py-8 max-w-5xl">
-        <h1 className="text-4xl font-bold text-center mb-8">Slatka Želja</h1>
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-8">
+          Slatka Želja
+        </h1>
 
-        <div className="grid md:grid-cols-2 gap-8 items-center mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-12">
           <img
             src="https://media.houseandgarden.co.uk/photos/61893f4cb028fc86ce48802d/3:2/w_660,h_440,c_limit/apr-10_simple-vanilla-cake_b.jpg"
             alt="Slatka Želja"
-            className="rounded-lg shadow-lg"
+            className="rounded-lg shadow-lg w-full"
           />
 
           <div>
-            <h2 className="text-2xl font-semibold mb-4">Naša priča</h2>
+            <h2 className="text-xl sm:text-2xl font-semibold mb-4">
+              Naša priča
+            </h2>
             <p className="text-muted-foreground mb-4">
               Dobrodošli u pekaru Slatku Želju, gdje se strast susreće sa
               savršenstvom u svakom zalogaju. Od 2010. godine izrađujemo ukusne
@@ -37,7 +41,9 @@ const About: React.FC = () => {
         </div>
 
         <div className="p-6 rounded-lg mb-12 bg-slate-100">
-          <h2 className="text-2xl font-semibold mb-4">Naše vrijednosti</h2>
+          <h2 className="text-xl sm:text-2xl font-semibold mb-4">
+            Naše vrijednosti
+          </h2>
           <ul className="list-disc list-inside space-y-2 text-muted-foreground">
             <li>Korištenje visokokvalitetnih sastojaka lokalnog porijekla</li>
             <li>Posvećenost tradicionalnim metodama pečenja</li>
@@ -46,9 +52,11 @@ const About: React.FC = () => {
           </ul>
         </div>
 
-        <div className="text-center">
-          <h2 className="text-2xl font-semibold mb-4">Posjetite nas danas!</h2>
-          <p className="text-muted-foreground mb-6 w-2/3 mx-auto">
+        <div className="text-center p-6 rounded-lg mb-12">
+          <h2 className="text-xl sm:text-2xl font-semibold mb-4">
+            Posjetite nas danas!
+          </h2>
+          <p className="text-muted-foreground mb-6 sm:w-full lg:w-2/3 mx-auto">
             Dođite osjetiti toplinu i miris svježe pečenih proizvoda u Slatkoj
             Želji. Voljeli bismo biti dio vašeg slavlja i svakodnevnih
             trenutaka.

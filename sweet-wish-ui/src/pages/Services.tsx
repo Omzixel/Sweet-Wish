@@ -35,26 +35,28 @@ const Services: React.FC = () => {
   ];
 
   return (
-    <section className="">
+    <section>
       <div
-        className="bg-cover h-96 mb-5"
+        className="bg-cover h-64 sm:h-64 lg:h-96 mb-5"
         style={{
           backgroundImage:
-            'url("https://nakedcakes.sg/wp-content/uploads/2015/03/cake-service-03.jpg")',
+            'url("https://preppykitchen.com/wp-content/uploads/2022/05/Naked-Cake-Recipe-Card.jpg")',
         }}
         aria-label="Hero section with studio name"
       ></div>
 
-      <h1 className="text-4xl font-bold text-center mb-8">Slatka Želja</h1>
+      <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-8">
+        Slatka Želja
+      </h1>
 
-      <p className="text-xl text-center text-slate-600 mx-36">
+      <p className="text-lg sm:text-xl text-center text-slate-600 px-4 lg:mx-36">
         Otkrijte svijet naše pekarske stručnosti i uživajte u ručno izrađenim
         poslasticama koje su savršena kombinacija okusa, kvalitete i estetike.
         Svaka kreacija dolazi iz pažljivo biranih sastojaka s ciljem da vaši
         posebni trenuci budu još slađi.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10 mx-24">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10 px-4 lg:mx-24">
         {services.map((service, index) => (
           <div
             key={index}
@@ -73,9 +75,11 @@ const Services: React.FC = () => {
         ))}
       </div>
 
-      <div className="mt-16 text-center">
-        <h2 className="text-2xl font-semibold mb-4">Spremni za naručiti?</h2>
-        <p className="mb-6 text-muted-foreground mx-8">
+      <div className="mt-16 text-center px-4">
+        <h2 className="text-xl sm:text-2xl font-semibold mb-4">
+          Spremni za naručiti?
+        </h2>
+        <p className="mb-6 text-muted-foreground text-center px-4 sm:mx-auto lg:mx-8">
           Kontaktirajte nas već danas kako bismo razgovarali o vašim potrebama
           za pečenjem. Naše ljubazno osoblje rado će vam pomoći u odabiru
           savršene torte, kolača ili poslastice za svaku prigodu.

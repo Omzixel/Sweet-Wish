@@ -34,12 +34,12 @@ const Home: React.FC = () => {
   return (
     <section>
       <div className="container mx-auto">
-        <div className="mt-10 text-center bg-amber-50 py-10 mx-16 p-4 rounded-md shadow-md">
-          <h1 className="text-4xl font-bold mb-8 text-center">
+        <div className="mt-10 text-center bg-amber-50 py-10 lg:mx-16 p-4 rounded-md shadow-md">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-8 text-center">
             Dobrodošli u Slatku Želju
           </h1>
 
-          <Carousel className="w-1/2 mx-auto">
+          <Carousel className="sm:w-full lg:w-1/2 mx-auto">
             <CarouselContent>
               {images.map((imageUrl, index) => (
                 <CarouselItem key={index}>
@@ -55,8 +55,10 @@ const Home: React.FC = () => {
             <CarouselNext />
           </Carousel>
         </div>
-        <div className="mt-10 text-center bg-amber-100 py-10 mx-16 p-4 rounded-md shadow-md">
-          <h2 className="text-2xl font-semibold mb-4">O Slatkoj Želji</h2>
+        <div className="mt-10 text-center bg-amber-100 py-10 lg:mx-16 p-4 rounded-md shadow-md">
+          <h2 className="text-xl sm:text-2xl font-semibold mb-4">
+            O Slatkoj Želji
+          </h2>
           <p className="mb-6 text-muted-foreground mx-4">
             U Slatkoj Želji već više od 5 godina izrađujemo ukusne torte i
             kolače. Naša strast prema pečenju i predanost kvalitetnim sastojcima
@@ -66,7 +68,7 @@ const Home: React.FC = () => {
             <Link to="/about">ISTRAŽI VIŠE</Link>
           </Button>
         </div>
-        <div className="p-4 mt-10 mx-16 bg-amber-50 rounded-md shadow-md">
+        <div className="mt-10 bg-amber-50 py-10 lg:mx-16 p-4 rounded-md shadow-md">
           <div className="flex justify-center space-x-4 mb-4">
             <button
               onClick={() => setActiveTab("cake")}

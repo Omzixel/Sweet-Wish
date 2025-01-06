@@ -9,15 +9,15 @@ const Contact: React.FC = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted:", { name, email, message });
   };
 
   return (
-    <section className="">
+    <section>
       <div
-        className="bg-cover h-96 mb-5"
+        className="bg-cover h-64 sm:h-64 lg:h-96 mb-5"
         style={{
           backgroundImage:
             'url("https://hips.hearstapps.com/hmg-prod/images/chocolate-cake-index-64b83bce2df26.jpg?crop=0.6668359143606668xw:1xh;center,top&resize=1200:*")',
@@ -25,12 +25,18 @@ const Contact: React.FC = () => {
         aria-label="Hero section with studio name"
       ></div>
 
-      <div className="container mx-auto grid grid-cols-2 gap-8">
-        <div className="max-w-md">
-          <h1 className="text-4xl font-bold mb-8">Kontaktirajte nas</h1>
+      <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 px-4">
+        {/* Contact Form */}
+        <div className="max-w-lg mx-auto">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6">
+            Kontaktirajte nas
+          </h1>
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
-              <label htmlFor="name" className="block text-gray-700">
+              <label
+                htmlFor="name"
+                className="block text-gray-700 font-medium mb-1"
+              >
                 Vaše ime:
               </label>
               <input
@@ -38,13 +44,16 @@ const Contact: React.FC = () => {
                 id="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full border p-2"
+                className="w-full border p-3 rounded focus:ring focus:ring-pink-200 focus:outline-none"
                 required
               />
             </div>
 
             <div className="mb-4">
-              <label htmlFor="email" className="block text-gray-700">
+              <label
+                htmlFor="email"
+                className="block text-gray-700 font-medium mb-1"
+              >
                 Vaša e-mail adresa:
               </label>
               <input
@@ -52,58 +61,68 @@ const Contact: React.FC = () => {
                 id="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full border p-2"
+                className="w-full border p-3 rounded focus:ring focus:ring-pink-200 focus:outline-none"
                 required
               />
             </div>
 
             <div className="mb-4">
-              <label htmlFor="message" className="block text-gray-700">
+              <label
+                htmlFor="message"
+                className="block text-gray-700 font-medium mb-1"
+              >
                 Vaša poruka:
               </label>
               <textarea
                 id="message"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                className="w-full border p-2"
+                className="w-full border p-3 rounded focus:ring focus:ring-pink-200 focus:outline-none"
+                rows={5}
                 required
               ></textarea>
             </div>
 
-            <button type="submit" className="bg-pink-500 text-white p-2">
+            <button
+              type="submit"
+              className="bg-pink-500 text-white py-2 px-6 rounded hover:bg-pink-600 transition-all"
+            >
               Pošalji
             </button>
           </form>
         </div>
 
-        <div>
-          <h2 className="text-2xl font-bold mb-4">Kontakt informacije</h2>
-          <p className="flex items-center text-lg">
-            <CiMail className="mr-2" />
-            <span>Email: zeljka.lozic69@gmail.com</span>
-          </p>
-          <p className="flex items-center text-lg">
-            <BsTelephone className="mr-2" />
-            <span>Mobitel: 097 737 7166</span>
-          </p>
-          <p className="flex items-center text-lg">
-            <CiClock2 className="mr-2" />
-            <span>Radni dani: Pon-Pet, 08:00 - 16:00</span>
-          </p>
-          <p className="flex items-center text-lg">
-            <IoLocationOutline className="mr-2" />
-            <span>Bračka 3, Đakovo, Hrvatska</span>
-          </p>
-          <br />
+        {/* Contact Info */}
+        <div className="px-4">
+          <h2 className="text-2xl font-bold mb-6">Kontakt informacije</h2>
+          <div className="space-y-4">
+            <p className="flex items-center text-lg">
+              <CiMail className="mr-2 text-pink-500" />
+              <span>Email: zeljka.lozic69@gmail.com</span>
+            </p>
+            <p className="flex items-center text-lg">
+              <BsTelephone className="mr-2 text-pink-500" />
+              <span>Mobitel: 097 737 7166</span>
+            </p>
+            <p className="flex items-center text-lg">
+              <CiClock2 className="mr-2 text-pink-500" />
+              <span>Radni dani: Pon-Pet, 08:00 - 16:00</span>
+            </p>
+            <p className="flex items-center text-lg">
+              <IoLocationOutline className="mr-2 text-pink-500" />
+              <span>Bračka 3, Đakovo, Hrvatska</span>
+            </p>
+          </div>
 
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d495.9084952343278!2d18.40974836618898!3d45.32292607269567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x268b19eaf3f8b15d%3A0x6cefe475adf82c17!2sSlatka%20%C5%BDelja!5e0!3m2!1sen!2shr!4v1706719714324!5m2!1sen!2shr"
-            width="100%"
-            height="300"
-            style={{ border: "0" }}
-            loading="lazy"
-            title="location"
-          ></iframe>
+          <div className="mt-8">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d495.9084952343278!2d18.40974836618898!3d45.32292607269567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x268b19eaf3f8b15d%3A0x6cefe475adf82c17!2sSlatka%20%C5%BDelja!5e0!3m2!1sen!2shr!4v1706719714324!5m2!1sen!2shr"
+              className="w-full rounded-md shadow-lg aspect-video"
+              loading="lazy"
+              title="location"
+              style={{ border: "0" }}
+            ></iframe>
+          </div>
         </div>
       </div>
     </section>
