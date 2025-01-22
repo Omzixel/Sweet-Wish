@@ -1,20 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import logoImg from "../../public/logo.png";
 
 const Navbar: React.FC = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen((prevState) => !prevState);
-  };
-
-  // Close mobile menu when the component is mounted
-  React.useEffect(() => {
-    setIsMobileMenuOpen(false);
-  }, []);
-
   return (
     <header className="w-full py-4 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">

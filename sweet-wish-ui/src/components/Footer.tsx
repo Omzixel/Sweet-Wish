@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
             </div>
             <p>Ulica Bračka 3</p>
             <p>31400, Đakovo</p>
-            <p>Phone: 097 747 7166</p>
+            <p>Mobitel: 097 747 7166</p>
             <p>Email: zeljka@lozic69@gmail.com</p>
           </div>
           <div className="flex flex-col items-center md:items-end gap-4">
